@@ -1,0 +1,14 @@
+<!-- templates/categories.html -->
+{% extends "base.html" %}
+{% block title %}Choose a News Category{% endblock %}
+{% block content %}
+  <a href="javascript:history.back()" class="back-button">← Back</a>
+  <h2>Select a News Category</h2>
+  <div class="category-grid">
+    {% for key, value in categories.items() %}
+      <a href="{{ url_for('show_news', category=key) }}" class="category-tile">
+        {{ value.display }}
+      </a>
+    {% endfor %}
+  </div>
+{% endblock %}

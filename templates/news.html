@@ -1,0 +1,21 @@
+<!-- templates/news.html -->
+{% extends "base.html" %}
+
+{% block title %}{{ category }} Stories{% endblock %}
+
+{% block content %}
+  <a href="javascript:history.back()" class="back-button">← Back</a>
+  <h2 class="section-heading">{{ category }} Stories</h2>
+
+  {% if news %}
+    <div class="news-grid">
+      {% for item in news %}
+        <div class="card news-card">
+          <h3><a href="{{ item['url'] }}" target="_blank">{{ item['title'] }}</a></h3>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No news found for this category.</p>
+  {% endif %}
+{% endblock %}

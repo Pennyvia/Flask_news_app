@@ -1,0 +1,32 @@
+<!-- templates/welcome.html -->
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+  <div class="welcome-container">
+    <h1 class="app-title">📰 News Clustering Dashboard</h1>
+    <p class="app-subtitle">Explore intelligently grouped stories by topic</p>
+
+    <img src= "static/undraw_news_nz1p.png" alt="News Graphic" class="hero-graphic">
+
+    <div class="user-card">
+      <table>
+        <tr>
+          <th>Name</th>
+          <td>{{ name }}</td>
+        </tr>
+        <tr>
+          <th>Reg Number</th>
+          <td>{{ reg_number }}</td>
+        </tr>
+        <tr>
+          <th>Date</th>
+          <td>{{ current_date }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <a href="{{ url_for('categories_page') }}" class="start-button">Browse News Categories</a>
+  </div>
+{% endblock %}
